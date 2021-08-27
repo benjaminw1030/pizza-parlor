@@ -9,6 +9,11 @@ body {
   background-color: #45A29E;
   color: #66FCF1;
   margin-top: 15px;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.jumbotron h1 {
+  font-size: 50px;
 }
 
 .btn-dark {
@@ -33,7 +38,7 @@ label {
 }
 
 .topping {
- margin-left: 20px;
+  margin-left: 20px;
 }
 
 .card {
