@@ -24,7 +24,26 @@ Pizza.prototype.priceCalc = function() {
   Object.keys(this.toppings).forEach(topping => this.price += parseFloat(topping));
 }
 
-
 // User Interface Logic
 
 let customPizza = new Pizza("", "", 0);
+let pepperoni = new Topping("pepperoni", 1.5);
+let sausage = new Topping("sausage", 1.5);
+let bacon = new Topping("bacon", 1.5);
+let extraCheese = new Topping("extra cheese", 1.25);
+let greenPeppers = new Topping("green peppers", 1)
+let mushrooms = new Topping("mushrooms", 1.25);
+let blackOlives = new Topping("black olives", 1);
+let spinach = new Topping("spinach", 1);
+let pineapple = new Topping("pineapple", 1.5);
+
+$(document).ready(function () {
+  $("form#pizza-order").submit(function (event) {
+    event.preventDefault();
+    const name = $("#name").val();
+    const number = $("#input").val();
+    const direction = $("input:radio[name=direction]:checked").val();
+
+    $("#result").fadeIn();
+  });
+});

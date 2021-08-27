@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -7,22 +8,75 @@
   <script src="js/scripts.js"></script>
   <title>JavaScript Pizza</title>
 </head>
+
 <body>
+
   <body>
     <div class="container" id="content">
       <div class="jumbotron">
-        <h2>Welcome JavaScript Pizza Parlor!</h2>
+        <h2>Welcome to the JavaScript Pizza Parlor!</h2>
         <h6>Enter a selection to construct the pizza of your choice!</h6>
       </div>
-      
+
       <div class="card">
         <form id="pizza-order">
           <div class="form-group">
             <label for="name">Name</label>
             <input id="name" class="form-control" type="text" placeholder="Enter a name for this order" required>
-            <div class="radio">
-            <button type="submit" class="btn btn-dark" id="translate">Construct my pizza!</button>
           </div>
+          <div class="form-group">
+            <select id="size" class="form-select">
+              <option value="3.99">String (mini 6")</option>
+              <option value="5.99">Array (small 10")</option>
+              <option value="7.99">Object (medium 12")</option>
+              <option value="9.99">Function (large 14")</option>
+              <option value="11.99">PIZZA.js (extra large 16")</option>
+            </select>
+            <select id="crust" class="form-select">
+              <option value="0">Thin</option>
+              <option value="0">Original Hand-Tossed</option>
+              <option value="1.99">Pan</option>
+              <option value="2.99">Cheese Stuffed</option>
+              <option value="3.99">Gluten-Free</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input id="pepperoni" class="form-check-input" type="checkbox">
+            <label for="pepperoni">Pepperoni</label>
+          </div>
+          <div class="form-group">
+            <input id="sausage" class="form-check-input" type="checkbox">
+            <label for="sausage">Sausage</label>
+          </div>
+          <div class="form-group">
+            <input id="bacon" class="form-check-input" type="checkbox">
+            <label for="bacon">Bacon</label>
+          </div>
+          <div class="form-group">
+            <input id="extra-cheese" class="form-check-input" type="checkbox">
+            <label for="extra-cheese">Extra Cheese</label>
+          </div>
+          <div class="form-group">
+            <input id="green-peppers" class="form-check-input" type="checkbox">
+            <label for="green-peppers">Green Peppers</label>
+          </div>
+          <div class="form-group">
+            <input id="mushrooms" class="form-check-input" type="checkbox">
+            <label for="mushrooms">Mushrooms</label>
+          </div>
+          <div class="form-group">
+            <input id="black-olives" class="form-check-input" type="checkbox">
+            <label for="black-olives">Black Olives</label>
+          </div>
+          <div class="form-group">
+            <input id="spinach" class="form-check-input" type="checkbox">
+            <label for="spinach">Spinach</label>
+          </div>
+          <div class="form-group">
+            <input id="pineapple" class="form-check-input" type="checkbox">
+            <label for="pineapple">Pineapple</label>
+          </div>
+          <button type="submit" class="btn btn-dark" id="translate">Construct my pizza!</button>
         </form>
         <div id="result">
         </div>
@@ -31,5 +85,6 @@
     <div class="container" id="portfolio">
       <p>Back to <a href="https://benjaminw1030.github.io/portfolio/">my portfolio</a>.</p>
     </div>
-</body>
+  </body>
+
 </html>
