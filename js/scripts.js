@@ -4,29 +4,46 @@
 
 // Business Logic
 
-function Pizza(size, crust, price) {
+function Pizza(name, size, crust, price) {
   this.toppings = {};
+  this.name = name;
   this.size = size;
   this.crust = crust;
   this.price = price;
 }
 
-function Topping (name, price) {
+function Topping(name, price) {
   this.name = name;
   this.price = price;
 }
 
-Pizza.prototype.addTopping = function(topping) {
+Pizza.prototype.addTopping = function (topping) {
   this.toppings[topping.price] = topping;
 }
 
-Pizza.prototype.priceCalc = function() {
+Pizza.prototype.priceCalc = function () {
   Object.keys(this.toppings).forEach(topping => this.price += parseFloat(topping));
+  if (this.size === "array") {
+    this.price += 2;
+  } else if (this.size === "object") {
+    this.price += 4;
+  } else if (this.size === "function") {
+    this.price += 6;
+  } else if (this.size === "pizza.js") {
+    this.price += 8;
+  }
+  if (this.crust === "pan") {
+    this.price += 2;
+  } else if (this.crust === "stuffed") {
+    this.price += 3;
+  } else if (this.crust === "gluten-free") {
+    this.price += 4;
+  }
 }
 
 // User Interface Logic
 
-let customPizza = new Pizza("", "", 0);
+let customPizza = new Pizza("", "", "", 3.99);
 let pepperoni = new Topping("pepperoni", 1.5);
 let sausage = new Topping("sausage", 1.5);
 let bacon = new Topping("bacon", 1.5);
@@ -40,10 +57,40 @@ let pineapple = new Topping("pineapple", 1.5);
 $(document).ready(function () {
   $("form#pizza-order").submit(function (event) {
     event.preventDefault();
-    const name = $("#name").val();
-    const number = $("#input").val();
-    const direction = $("input:radio[name=direction]:checked").val();
-
-    $("#result").fadeIn();
+    const pizzaName = $("#name").val();
+    const pizzaSize = $("#size").val();
+    const pizzaCrust = $("#crust").val();
+    customPizza.name = pizzaName;
+    customPizza.size = pizzaSize;
+    customPizza.crust = pizzaCrust;
+    if ($("#pepperoni").prop("checked")) {
+      customPizza.addTopping(pepperoni);
+    }
+    if ($("#sausage").prop("checked")) {
+      customPizza.addTopping(sausage);
+    }
+    if ($("#bacon").prop("checked")) {
+      customPizza.addTopping(bacon);
+    }
+    if ($("#extra-cheese").prop("checked")) {
+      customPizza.addTopping(extraCheese);
+    }
+    if ($("#green-peppers").prop("checked")) {
+      customPizza.addTopping(greenPeppers);
+    }
+    if ($("#mushrooms").prop("checked")) {
+      customPizza.addTopping(mushrooms);
+    }
+    if ($("#black-olives").prop("checked")) {
+      customPizza.addTopping(blackOlives);
+    }
+    if ($("#spinach").prop("checked")) {
+      customPizza.addTopping(spinach);
+    }
+    if ($("#pineapple").prop("checked")) {
+      customPizza.addTopping(pineapple);
+    }
+    customPizza.priceCalc();
+    $("#receipt").show();
   });
 });
