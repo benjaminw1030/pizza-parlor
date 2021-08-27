@@ -68,6 +68,40 @@ let blackOlives = new Topping("black olives", 1);
 let spinach = new Topping("spinach", 1);
 let pineapple = new Topping("pineapple", 1.5);
 
+function createReceipt(pizzaOrder) {
+  let ingredients = $("ul#ingredients")
+}
+
+function parseToppingsFromForm() {
+  if ($("#pepperoni").prop("checked")) {
+    customPizza.addTopping(pepperoni);
+  }
+  if ($("#sausage").prop("checked")) {
+    customPizza.addTopping(sausage);
+  }
+  if ($("#bacon").prop("checked")) {
+    customPizza.addTopping(bacon);
+  }
+  if ($("#extra-cheese").prop("checked")) {
+    customPizza.addTopping(extraCheese);
+  }
+  if ($("#green-peppers").prop("checked")) {
+    customPizza.addTopping(greenPeppers);
+  }
+  if ($("#mushrooms").prop("checked")) {
+    customPizza.addTopping(mushrooms);
+  }
+  if ($("#black-olives").prop("checked")) {
+    customPizza.addTopping(blackOlives);
+  }
+  if ($("#spinach").prop("checked")) {
+    customPizza.addTopping(spinach);
+  }
+  if ($("#pineapple").prop("checked")) {
+    customPizza.addTopping(pineapple);
+  }
+}
+
 $(document).ready(function () {
   $("form#pizza-order").submit(function (event) {
     event.preventDefault();
@@ -78,34 +112,10 @@ $(document).ready(function () {
     customPizza.name = pizzaName;
     customPizza.size = pizzaSize;
     customPizza.crust = pizzaCrust;
-    if ($("#pepperoni").prop("checked")) {
-      customPizza.addTopping(pepperoni);
-    }
-    if ($("#sausage").prop("checked")) {
-      customPizza.addTopping(sausage);
-    }
-    if ($("#bacon").prop("checked")) {
-      customPizza.addTopping(bacon);
-    }
-    if ($("#extra-cheese").prop("checked")) {
-      customPizza.addTopping(extraCheese);
-    }
-    if ($("#green-peppers").prop("checked")) {
-      customPizza.addTopping(greenPeppers);
-    }
-    if ($("#mushrooms").prop("checked")) {
-      customPizza.addTopping(mushrooms);
-    }
-    if ($("#black-olives").prop("checked")) {
-      customPizza.addTopping(blackOlives);
-    }
-    if ($("#spinach").prop("checked")) {
-      customPizza.addTopping(spinach);
-    }
-    if ($("#pineapple").prop("checked")) {
-      customPizza.addTopping(pineapple);
-    }
+    parseToppingsFromForm();
     customPizza.priceCalc();
-    $("#receipt").show();
+    createReceipt();
+    $("#receipt-card").show();
+    $("#order-card").hide();
   });
 });

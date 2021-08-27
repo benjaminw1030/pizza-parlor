@@ -18,71 +18,83 @@
         <h6>Enter a selection to construct the pizza of your choice!</h6>
       </div>
 
-      <div class="card">
-        <form id="pizza-order">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input id="name" class="form-control" type="text" placeholder="Enter a name for this order" required>
-          </div>
-          <div class="form-group">
-            <select id="size" class="form-select">
-              <option value="string">String (mini 6")</option>
-              <option value="array">Array (small 10")</option>
-              <option value="object">Object (medium 12")</option>
-              <option value="function">Function (large 14")</option>
-              <option value="pizza.js">PIZZA.js (extra large 16")</option>
-            </select>
-            <select id="crust" class="form-select">
-              <option value="thin">Thin</option>
-              <option value="original">Original Hand-Tossed</option>
-              <option value="pan">Pan</option>
-              <option value="stuffed">Cheese Stuffed</option>
-              <option value="gluten-free">Gluten-Free</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <input id="pepperoni" class="form-check-input" type="checkbox">
-            <label for="pepperoni">Pepperoni</label>
-          </div>
-          <div class="form-group">
-            <input id="sausage" class="form-check-input" type="checkbox">
-            <label for="sausage">Sausage</label>
-          </div>
-          <div class="form-group">
-            <input id="bacon" class="form-check-input" type="checkbox">
-            <label for="bacon">Bacon</label>
-          </div>
-          <div class="form-group">
-            <input id="extra-cheese" class="form-check-input" type="checkbox">
-            <label for="extra-cheese">Extra Cheese</label>
-          </div>
-          <div class="form-group">
-            <input id="green-peppers" class="form-check-input" type="checkbox">
-            <label for="green-peppers">Green Peppers</label>
-          </div>
-          <div class="form-group">
-            <input id="mushrooms" class="form-check-input" type="checkbox">
-            <label for="mushrooms">Mushrooms</label>
-          </div>
-          <div class="form-group">
-            <input id="black-olives" class="form-check-input" type="checkbox">
-            <label for="black-olives">Black Olives</label>
-          </div>
-          <div class="form-group">
-            <input id="spinach" class="form-check-input" type="checkbox">
-            <label for="spinach">Spinach</label>
-          </div>
-          <div class="form-group">
-            <input id="pineapple" class="form-check-input" type="checkbox">
-            <label for="pineapple">Pineapple</label>
-          </div>
-          <button type="submit" class="btn btn-dark" id="translate">Construct my pizza!</button>
-        </form>
-        <div id="receipt">
-          
+      <div class="card" id="order-card">
+        <div class="card-body">
+          <form id="pizza-order">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" class="form-control" type="text" placeholder="Enter a name for this order" required>
+            </div>
+            <div class="form-group">
+              <select id="size" class="form-select">
+                <option value="string">String (mini 6")</option>
+                <option value="array">Array (small 10")</option>
+                <option value="object">Object (medium 12")</option>
+                <option value="function">Function (large 14")</option>
+                <option value="pizza.js">PIZZA.js (extra large 16")</option>
+              </select>
+              <select id="crust" class="form-select">
+                <option value="thin">Thin</option>
+                <option value="original">Original Hand-Tossed</option>
+                <option value="pan">Pan</option>
+                <option value="stuffed">Cheese Stuffed</option>
+                <option value="gluten-free">Gluten-Free</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input id="pepperoni" class="form-check-input" type="checkbox">
+              <label for="pepperoni">Pepperoni</label>
+            </div>
+            <div class="form-group">
+              <input id="sausage" class="form-check-input" type="checkbox">
+              <label for="sausage">Sausage</label>
+            </div>
+            <div class="form-group">
+              <input id="bacon" class="form-check-input" type="checkbox">
+              <label for="bacon">Bacon</label>
+            </div>
+            <div class="form-group">
+              <input id="extra-cheese" class="form-check-input" type="checkbox">
+              <label for="extra-cheese">Extra Cheese</label>
+            </div>
+            <div class="form-group">
+              <input id="green-peppers" class="form-check-input" type="checkbox">
+              <label for="green-peppers">Green Peppers</label>
+            </div>
+            <div class="form-group">
+              <input id="mushrooms" class="form-check-input" type="checkbox">
+              <label for="mushrooms">Mushrooms</label>
+            </div>
+            <div class="form-group">
+              <input id="black-olives" class="form-check-input" type="checkbox">
+              <label for="black-olives">Black Olives</label>
+            </div>
+            <div class="form-group">
+              <input id="spinach" class="form-check-input" type="checkbox">
+              <label for="spinach">Spinach</label>
+            </div>
+            <div class="form-group">
+              <input id="pineapple" class="form-check-input" type="checkbox">
+              <label for="pineapple">Pineapple</label>
+            </div>
+            <button type="submit" class="btn btn-dark" id="translate">Construct my pizza!</button>
+          </form>
         </div>
       </div>
     </div>
+
+    <div id="receipt-card" class="card">
+      <div class="card-body">
+        <h5 class="card-title">Thanks <span id="order-name"></span>!</h5>
+        <p class="card-text">You ordered a pizza with:</p>
+        <ul class="card-text" id="ingredients">
+
+        </ul>
+        <p>Your total is <span id="order-cost"></span></p>
+
+      </div>
+    </div>
+
     <div class="container" id="portfolio">
       <p>Back to <a href="https://benjaminw1030.github.io/portfolio/">my portfolio</a>.</p>
     </div>
