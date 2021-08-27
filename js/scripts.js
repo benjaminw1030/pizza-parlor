@@ -18,11 +18,16 @@ function Topping(name, price) {
 }
 
 Pizza.prototype.addTopping = function (topping) {
-  this.toppings[topping.price] = topping;
+  this.toppings[topping.name] = topping;
+}
+
+Pizza.prototype.toppingPrice = function (topping) {
+  return parseFloat(this.toppings[topping].price);
 }
 
 Pizza.prototype.priceCalc = function () {
-  Object.keys(this.toppings).forEach(topping => this.price += parseFloat(topping));
+  Object.keys(this.toppings).forEach(topping => this.price += this.toppingPrice(topping));
+
   if (this.size === "array") {
     this.price += 2;
   } else if (this.size === "object") {
@@ -37,13 +42,13 @@ Pizza.prototype.priceCalc = function () {
   } else if (this.crust === "stuffed") {
     this.price += 3;
   } else if (this.crust === "gluten-free") {
-    this.price += 4;
+    this.price += 3;
   }
 }
 
 // User Interface Logic
 
-let customPizza = new Pizza("", "", "", 3.99);
+let customPizza = new Pizza("", "", "", 0);
 let pepperoni = new Topping("pepperoni", 1.5);
 let sausage = new Topping("sausage", 1.5);
 let bacon = new Topping("bacon", 1.5);
@@ -60,6 +65,7 @@ $(document).ready(function () {
     const pizzaName = $("#name").val();
     const pizzaSize = $("#size").val();
     const pizzaCrust = $("#crust").val();
+    customPizza.price = 3.99;
     customPizza.name = pizzaName;
     customPizza.size = pizzaSize;
     customPizza.crust = pizzaCrust;
