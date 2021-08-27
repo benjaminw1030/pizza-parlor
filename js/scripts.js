@@ -58,18 +58,27 @@ Pizza.prototype.priceCalc = function () {
 // User Interface Logic
 
 let customPizza = new Pizza("", "", "", 0);
-let pepperoni = new Topping("pepperoni", 1.5);
-let sausage = new Topping("sausage", 1.5);
-let bacon = new Topping("bacon", 1.5);
-let extraCheese = new Topping("extra cheese", 1.25);
-let greenPeppers = new Topping("green peppers", 1)
-let mushrooms = new Topping("mushrooms", 1.25);
-let blackOlives = new Topping("black olives", 1);
-let spinach = new Topping("spinach", 1);
-let pineapple = new Topping("pineapple", 1.5);
+let pepperoni = new Topping("Pepperoni", 1.5);
+let sausage = new Topping("Sausage", 1.5);
+let bacon = new Topping("Bacon", 1.5);
+let extraCheese = new Topping("Extra Cheese", 1.25);
+let greenPeppers = new Topping("Green Peppers", 1)
+let mushrooms = new Topping("Mushrooms", 1.25);
+let blackOlives = new Topping("Black Olives", 1);
+let spinach = new Topping("Spinach", 1);
+let pineapple = new Topping("Pineapple", 1.5);
 
 function createReceipt(pizzaOrder) {
-  let ingredients = $("ul#ingredients")
+  let ingredients = $("ul#ingredients");
+  let htmlIngredients = "";
+  Object.keys(pizzaOrder.toppings).forEach(key => {
+    htmlIngredients += "<li>" + key.toString() + "</li>"
+  });
+  ingredients.html(htmlIngredients);
+  $("#order-name").text(customPizza.name);
+  $("#order-size").text(customPizza.size);
+  $("#order-crust").text(customPizza.crust);
+  $("#order-cost").text(customPizza.price.toFixed(2));
 }
 
 function parseToppingsFromForm() {
@@ -114,7 +123,7 @@ $(document).ready(function () {
     customPizza.crust = pizzaCrust;
     parseToppingsFromForm();
     customPizza.priceCalc();
-    createReceipt();
+    createReceipt(customPizza);
     $("#receipt-card").show();
     $("#order-card").hide();
   });

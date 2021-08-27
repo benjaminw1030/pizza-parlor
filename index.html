@@ -20,22 +20,22 @@
 
       <div class="card" id="order-card">
         <div class="card-body">
-          <form id="pizza-order">
+          <form id="pizza-order" class="card-text">
             <div class="form-group">
               <label for="name">Name</label>
               <input id="name" class="form-control" type="text" placeholder="Enter a name for this order" required>
             </div>
             <div class="form-group">
               <select id="size" class="form-select">
-                <option value="string">String (mini 6")</option>
-                <option value="array">Array (small 10")</option>
-                <option value="object">Object (medium 12")</option>
-                <option value="function">Function (large 14")</option>
-                <option value="pizza.js">PIZZA.js (extra large 16")</option>
+                <option value="a mini">String (mini 6")</option>
+                <option value="a small">Array (small 10")</option>
+                <option value="a medium">Object (medium 12")</option>
+                <option value="a large">Function (large 14")</option>
+                <option value="an extra large">PIZZA.js (extra large 16")</option>
               </select>
               <select id="crust" class="form-select">
                 <option value="thin">Thin</option>
-                <option value="original">Original Hand-Tossed</option>
+                <option value="hand-tossed">Hand-Tossed</option>
                 <option value="pan">Pan</option>
                 <option value="stuffed">Cheese Stuffed</option>
                 <option value="gluten-free">Gluten-Free</option>
@@ -81,19 +81,17 @@
           </form>
         </div>
       </div>
-    </div>
-
-    <div id="receipt-card" class="card">
-      <div class="card-body">
-        <h5 class="card-title">Thanks <span id="order-name"></span>!</h5>
-        <p class="card-text">You ordered a pizza with:</p>
-        <ul class="card-text" id="ingredients">
-
-        </ul>
-        <p>Your total is <span id="order-cost"></span></p>
-
+      <div id="receipt-card" class="card">
+        <div class="card-body">
+          <h5 class="card-title">Thanks <span id="order-name"></span>!</h5>
+          <p class="card-text">You ordered <span id="order-size"></span> <span id="order-crust"></span> crust pizza with:</p>
+          <ul class="card-text" id="ingredients">
+          </ul>
+          <p class="card-text">Your total is $<span id="order-cost"></span></p>
+          </div>
       </div>
     </div>
+
 
     <div class="container" id="portfolio">
       <p>Back to <a href="https://benjaminw1030.github.io/portfolio/">my portfolio</a>.</p>
