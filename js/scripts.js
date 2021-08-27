@@ -25,8 +25,17 @@ Pizza.prototype.toppingPrice = function (topping) {
   return parseFloat(this.toppings[topping].price);
 }
 
+Pizza.prototype.reset = function () {
+  this.toppings = {};
+  this.name = "";
+  this.size = "";
+  this.crust = "";
+  this.price = 3.99;
+}
+
 Pizza.prototype.priceCalc = function () {
   Object.keys(this.toppings).forEach(topping => this.price += this.toppingPrice(topping));
+
 
   if (this.size === "array") {
     this.price += 2;
@@ -62,10 +71,10 @@ let pineapple = new Topping("pineapple", 1.5);
 $(document).ready(function () {
   $("form#pizza-order").submit(function (event) {
     event.preventDefault();
+    customPizza.reset();
     const pizzaName = $("#name").val();
     const pizzaSize = $("#size").val();
     const pizzaCrust = $("#crust").val();
-    customPizza.price = 3.99;
     customPizza.name = pizzaName;
     customPizza.size = pizzaSize;
     customPizza.crust = pizzaCrust;
