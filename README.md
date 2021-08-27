@@ -1,3 +1,45 @@
+# JavaScript Pizza Parlor
+
+### By Benjamin Wilson
+
+### This page uses object constructors to order a custom pizza.
+
+## Technologies Used
+
+* HTML
+* CSS
+* Javascript
+* jQuery
+* Bootstrap
+
+## Description
+
+This page will take user input from the provided form and return a reciept displaying the price and the toppings ordered. All of the data is held in objects created by constructors.
+
+## Setup/Installation Requirements
+
+1. [Clone](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) this repository from GitHub to your local machine.
+2. Open the new directory.
+3. Open index.html in a browser.
+
+You can also see it hosted directly on [GitHub Pages](https://benjaminw1030.github.io/pizza-parlor/).
+
+## Known Bugs
+
+* No bugs known at the moment.
+
+## License
+
+* [MIT License](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2021 Benjamin Wilson
+
+## Contact Information
+
+<benjaminw1030@gmail.com>
+
+---
+
 ## Specs:
 
 ### Describe: Pizza()
