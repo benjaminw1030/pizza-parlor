@@ -71,15 +71,20 @@ let pineapple = new Topping("Pineapple", 1.5);
 function attachButtonListeners() {
   $("#refresh").on("click", function () {
     location.reload();
-  }) 
+  })
 }
 
 function createReceipt(pizzaOrder) {
   let ingredients = $("ul#ingredients");
   let htmlIngredients = "";
-  Object.keys(pizzaOrder.toppings).forEach(key => {
-    htmlIngredients += "<li>" + key.toString() + "</li>"
-  });
+  console.log(pizzaOrder.toppings);
+  if ($.isEmptyObject(pizzaOrder.toppings)) {
+    htmlIngredients = "<li>Nothing but cheese and sauce!</li>"
+  } else {
+    Object.keys(pizzaOrder.toppings).forEach(key => {
+      htmlIngredients += "<li>" + key.toString() + "</li>"
+    });
+  }
   ingredients.html(htmlIngredients);
   $("#order-name").text(customPizza.name);
   $("#order-size").text(customPizza.size);
@@ -131,7 +136,7 @@ $(document).ready(function () {
     parseToppingsFromForm();
     customPizza.priceCalc();
     createReceipt(customPizza);
-    $("#receipt-card").show();
+    $("#receipt-card").css("display", "flex");
     $("#order-card").hide();
   });
 });
