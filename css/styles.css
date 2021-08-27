@@ -17,12 +17,23 @@ body {
   width: 50%;
   color: #C5C6C7;
   background-color: #1F2833;
+  display: flex;
+  justify-content: center;
+}
+
+label {
+
+  margin-left: 10px;
 }
 
 #pizza-img {
   width: 40%;
   float: right;
   margin-top: 10vh;
+}
+
+.topping {
+ margin-left: 20px;
 }
 
 .card {
