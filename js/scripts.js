@@ -68,6 +68,12 @@ let blackOlives = new Topping("Black Olives", 1);
 let spinach = new Topping("Spinach", 1);
 let pineapple = new Topping("Pineapple", 1.5);
 
+function attachButtonListeners() {
+  $("#refresh").on("click", function () {
+    location.reload();
+  }) 
+}
+
 function createReceipt(pizzaOrder) {
   let ingredients = $("ul#ingredients");
   let htmlIngredients = "";
@@ -113,6 +119,7 @@ function parseToppingsFromForm() {
 
 $(document).ready(function () {
   $("form#pizza-order").submit(function (event) {
+    attachButtonListeners();
     event.preventDefault();
     customPizza.reset();
     const pizzaName = $("#name").val();
