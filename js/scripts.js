@@ -17,7 +17,14 @@ function Topping (name, price) {
 }
 
 Pizza.prototype.addTopping = function(topping) {
-  this.toppings[topping.name] = topping;
+  this.toppings[topping.price] = topping;
 }
 
+Pizza.prototype.priceCalc = function() {
+  Object.keys(this.toppings).forEach(topping => this.price += parseFloat(topping));
+}
+
+
 // User Interface Logic
+
+let customPizza = new Pizza("", "", 0);
